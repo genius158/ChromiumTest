@@ -1,13 +1,14 @@
 group("mojotest"){
+    testonly = true
+
     deps = [
         ":demo_mojo_multiple_process",
     ]
-
-
 }
 
 
 executable("demo_mojo_multiple_process"){
+    testonly = true
     sources = [
         "demo_mojo_multiple_process.cc",
     ]

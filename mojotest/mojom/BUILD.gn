@@ -1,0 +1,15 @@
+import("//mojo/public/tools/bindings/mojom.gni")
+
+mojom("mojom_test"){
+    sources = [
+        "test.mojom",
+    ]
+}
+
+group("mojom"){
+    testonly = true
+    deps = [
+        ":mojom_test",
+    ]
+
+}

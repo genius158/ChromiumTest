@@ -1,6 +1,9 @@
 module demo.mojotest.mojom;
 
 interface Test {
-    Hello(string caller);
-    Hi() => (string answer);
+//    Hello(string caller);
+//    Hi() => (string answer);
+
+
+    SendHandle(handle<message_pipe>pipe_handle);
 };
