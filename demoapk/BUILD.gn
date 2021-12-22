@@ -1,0 +1,44 @@
+import("//build/config/android/config.gni")
+import("//build/config/android/rules.gni")
+#import("//third_part/icu/config.gni")
+
+android_resources("demo_apk_resources"){
+    testonly = true
+    sources = [
+#        "res/layout/demo_apk_activity.xml"
+    ]
+
+    custom_package = "org.chromium.demo.apk"
+}
+
+android_library("demo_apk_java"){
+    testonly = true
+    deps = [
+        ":demo_apk_resources",
+        "//base:base_java",
+#        "//base:jni_java",
+        "//ui/android:ui_java"
+    ]
+
+    sources = [
+        "src/org/chromium/demo/apk/DemoActivity.java"
+    ]
+}
+
+# name form dir name
+android_apk("demoapk"){
+    testonly = true
+    apk_name = "DEMO_APK"
+    android_manifest = "AndroidManifest.xml"
+
+    min_sdk_version = 21
+    target_sdk_version = 29
+
+    deps = [
+        ":demo_apk_java",
+        "//base:base_java",
+        "//base:base_java_test_support",
+        "//ui/android:ui_java",
+    ]
+
+}

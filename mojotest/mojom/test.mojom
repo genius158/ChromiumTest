@@ -1,0 +1,6 @@
+module demo.mojotest.mojom;
+
+interface Test {
+    Hello(string caller);
+    Hi() => (string answer);
+};

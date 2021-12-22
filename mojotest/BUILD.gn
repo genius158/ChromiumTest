@@ -1,0 +1,22 @@
+group("mojotest"){
+    deps = [
+        ":demo_mojo_multiple_process",
+    ]
+
+
+}
+
+
+executable("demo_mojo_multiple_process"){
+    sources = [
+        "demo_mojo_multiple_process.cc",
+    ]
+
+    deps = [
+        "//base",
+        "//mojo/public",
+        "//mojo/core/embedder",
+        "mojom",
+    ]
+
+}

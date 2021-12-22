@@ -1,0 +1,20 @@
+
+
+executable("elftest"){
+    sources = [
+        "HelloElf.cpp",
+        "HelloElf.h"
+    ]
+
+    deps = [
+    ]
+
+}
+
+shared_library("libelftest"){
+
+    sources = [
+        "HelloElf.cpp",
+        "HelloElf.h"
+    ]
+}

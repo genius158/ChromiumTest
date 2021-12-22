@@ -1,0 +1,13 @@
+# name is from dir name
+group("demo"){
+    testonly = true
+    if(is_android){
+        deps = [
+            "demoapk",
+            "elftest",
+            "mojotest",
+        ]
+    }else{
+        print("not android build process")
+    }
+}
